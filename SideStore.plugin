@@ -1,0 +1,16 @@
+#!name = SideStore 本地回环
+#!desc = 需要 Loon Build 1007 或以上；将发往 10.7.0.1 的 IPv4 流量回注本机，供 SideStore 设备通信使用。首次使用请验证刷新结果。
+#!system = iOS,iPadOS
+#!homepage = https://github.com/ShiinaWong/loon-plugins
+#!date = 2026-11-11
+#!tag = SideStore,本地回环
+
+# 本插件只处理目标地址 10.7.0.1，不包含代理节点、脚本或 MitM。
+# 官方说明：https://nsloon.app/docs/Plugin/
+# include-tun 与 IP Rewrite 均需要 Build 1007+。
+
+[General]
+include-tun = 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
